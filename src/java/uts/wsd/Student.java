@@ -10,10 +10,15 @@ import javax.xml.bind.annotation.*;
  *
  * @author sawicky
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Student implements Serializable{
+    @XmlElement(name = "name")
     private String name;
+    @XmlElement(name = "email")
     private String email;
+    @XmlElement(name = "password")
     private String password;
+    @XmlElement(name = "dob")
     private String dob;
     public Student(){
         super();
