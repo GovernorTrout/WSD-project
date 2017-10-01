@@ -11,13 +11,18 @@
     <body>
     
         <h1 id="h">Register</h1>
-        <form method="post" action="welcome.jsp">
+        <form method="post" action="main.jsp">
                  <script type="text/javascript">
                 function tutorFunc($i){
                     if ($i == "Tutor") {;
                         document.getElementById("specialityTD").innerHTML = "Specialty Subject";
                         document.getElementById("specialtySelect").style = "visibility:visible";
                         document.getElementById("specialtySelect").innerHTML = ('<option value="WSD">WSD</option><option value="USP">USP</option><option value="SEP">SEP</option><option value="AppProg">AppProg</option><option value="MobileApp">MobileApp</option>');
+                    }
+                    else {
+                        document.getElementById("specialityTD").innerHTML = '';
+                        document.getElementById("specialtySelect").style = "visibility:hidden";
+                        document.getElementById("specialtySelect").innerHTML = '';
                     }
                 }
             </script>
