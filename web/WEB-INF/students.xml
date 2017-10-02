@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>        
+        <name>888999</name>    
+        <email>ryan@ryanheise.com</email>
+        <password>test</password>
+        <type>Student</type>
+	   <subject>nothing</subject>
+	   <dob>12-05-2015</dob>
+    </user>
+</users>

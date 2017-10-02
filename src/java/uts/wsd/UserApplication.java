@@ -12,11 +12,19 @@ package uts.wsd;
 import java.util.*;
 import java.io.*;
 import javax.xml.bind.*;
-public class UserApplication {
+public class UserApplication implements Serializable{
     private String filePath;
     private Tutors tutors;
     private Students students;
-    public UserApplication(){
+    private Users users;
+    public UserApplication()
+    { 
+    
+    }
+    public UserApplication(String filePath, Users users){
+        super();
+        this.filePath = filePath;
+        this.users = users;
         
     }
 
@@ -38,9 +46,29 @@ public class UserApplication {
  
 // Now unmarshal the object from the file
         FileInputStream fin = new FileInputStream(filePath);
-        users = (Users)u.unmarshal(fin); // This loads the "shop" object
+        setUsers((Users)u.unmarshal(fin)); // This loads the "shop" object
         fin.close();
     }
+    public void updateXML(Users users, String filePath) throws Exception {
+        this.users = users;
+        this.filePath = filePath;
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
+        public void saveUsers() throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(users, fout);
+        fout.close();
+    }
+
+
     /**
      * @return the tutors
      */
@@ -67,6 +95,20 @@ public class UserApplication {
      */
     public void setStudents(Students students) {
         this.students = students;
+    }
+
+    /**
+     * @return the users
+     */
+    public Users getUsers() {
+        return users;
+    }
+
+    /**
+     * @param users the users to set
+     */
+    public void setUsers(Users users) {
+        this.users = users;
     }
     
 }

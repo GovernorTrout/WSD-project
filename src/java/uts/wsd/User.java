@@ -19,27 +19,37 @@ public class User implements Serializable {
     private String name; 
     @XmlElement(name = "password")
     private String password;  
-    @XmlElement(name = "gender")
-    private String gender;
-    @XmlElement(name = "favouriteColour")
-    private String favouriteColour;  
+    @XmlElement(name = "dob")
+    private String dob;
+    @XmlElement(name = "type")
+    private String type;
+    @XmlElement(name ="subject")
+    private String subject;
 
 
     
     
      
     public User(){
-        super();
+       
     }
-    public User(String email, String name, String password, String gender, String favouriteColour) {
-        super();
+        public User(String email, String name, String password, String dob, String type) {
+        
         this.email = email;
         this.name = name;
         this.password = password;
-        this.gender = gender;
-        this.favouriteColour = favouriteColour;
+        this.type = type;
+        this.dob = dob;
+    }
+
+    public User(String email, String name, String password, String dob, String type, String subject) {
         
-        
+        this.email = email;
+        this.name = name;
+        this.password = password;
+        this.type = type;
+        this.subject = subject; 
+        this.dob = dob;
     }
 
     public String getEmail() {
@@ -66,20 +76,47 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getGender() {
-        return gender;
+    /**
+     * @return the type
+     */
+    public String getType() {
+        return type;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    /**
+     * @param type the type to set
+     */
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getFavouriteColour() {
-        return favouriteColour;
+    /**
+     * @return the subject
+     */
+    public String getSubject() {
+        return subject;
     }
 
-    public void setFavouriteColour(String favouriteColour) {
-        this.favouriteColour = favouriteColour;
+    /**
+     * @param subject the subject to set
+     */
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
+
+    /**
+     * @return the dob
+     */
+    public String getDob() {
+        return dob;
+    }
+
+    /**
+     * @param dob the dob to set
+     */
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
 }
 
