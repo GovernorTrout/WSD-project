@@ -11,54 +11,49 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-                <%
-                    Users users = new Users();
-             String filePathStudent = application.getRealPath("WEB-INF/students.xml");
-             String filePathTutor = application.getRealPath("WEB-INF/tutors.xml");
-             String filePathBooking = application.getRealPath("WEB-INF/bookings.xml"); %>
-             <jsp:useBean id="userApp" class = "uts.wsd.UserApplication" scope ="application">
-                 <jsp:setProperty name ="userApp" property="filePath" value ="<%=filePathStudent%>"/>
-                 <jsp:setProperty name ="userApp" property="users" value="<%=users%>"/>
-    </jsp:useBean>
+        <%
+            String filePathStudent = application.getRealPath("WEB-INF/students.xml");
+            String filePathTutor = application.getRealPath("WEB-INF/tutors.xml");
+            String filePathBooking = application.getRealPath("WEB-INF/bookings.xml");%>
+        <jsp:useBean id="userApp" class = "uts.wsd.UserApplication" scope ="application">
+            <jsp:setProperty name ="userApp" property="filePath" value ="<%=filePathStudent%>"/>
+        </jsp:useBean>
+        <%Users users = userApp.getUsers();%>
+
     </head>
     <body>
         <h1>Hello World!</h1>
-         <%
-                
-                    
-                String type = request.getParameter("type");
-                String email = request.getParameter("email");
-                String name = request.getParameter("name");
-                String password = request.getParameter("password");
-                String dob = request.getParameter("dob");
-                  if (type.equals("Student")) {
-                        String specialty = "Student";
-                        User user = new User(email, name, password, dob, type, specialty);
-                        session.setAttribute("user",user); 
-                        if (users != null) {
-                            users.addUser(user);
-                            %><%=user.getName()%><%
-                            %><%=user.getEmail()%><%
-                            %><%=user.getDob()%><%
-                            %><%=user.getType()%><%
-                            %><%=user.getSubject()%><%
-                            userApp.saveUsers();
-                            userApp.updateXML(users, filePathStudent);
-                        }
-                        else {
-                            %>Null user<%
-                        }
-                        
-                    }
-                    else if (type.equals("Tutor")){
-                        String specialty = request.getParameter("specialty");
-                        User user = new User(name, email, password, dob, type, specialty);
-                        session.setAttribute("user",user);
-                        users.addUser(user);
-                       // userApp.updateXML(users, filePathTutor);
-                    } 
-                    else {
-                        %>Type invalid <%
-           }%>     
+        <%
+
+            String type = request.getParameter("type");
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            String dob = request.getParameter("dob");
+            if (type.equals("Student")) {
+                User user = new User(type, name, email, password, dob);
+                session.setAttribute("user", user);
+                if (users != null) {
+                    users.addUser(user);
+        %><%=user.getType()%><%
+        %><%=user.getName()%><%
+        %><%=user.getEmail()%><%
+        %><%=user.getDob()%><%
+            userApp.saveUsers();
+            userApp.updateXML(users, filePathStudent);
+        } else {
+        %>Null user<%
+            }
+
+        } else if (type.equals("Tutor")) {
+            String specialty = request.getParameter("specialty");
+            User user = new User(type, name, email, password, dob, specialty);
+            session.setAttribute("user", user);
+            users.addUser(user);
+            userApp.saveUsers();
+            userApp.updateXML(users, filePathStudent);
+        } else {
+        %>Type invalid <%
+            }%>     
     </body>
 </html>
