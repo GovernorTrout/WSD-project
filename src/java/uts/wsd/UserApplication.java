@@ -13,7 +13,8 @@ import java.util.*;
 import java.io.*;
 import javax.xml.bind.*;
 public class UserApplication implements Serializable{
-    private String filePath;
+    private String filePathStudent;
+    private String filePathTutor;
     private Tutors tutors;
     private Students students;
     private Users users;
@@ -21,9 +22,10 @@ public class UserApplication implements Serializable{
     { 
     
     }
-    public UserApplication(String filePath, Users users){
+    public UserApplication(String filePathTutor, String filePathStudent, Users users){
         super();
-        this.filePath = filePath;
+        this.filePathTutor = filePathTutor;
+        this.filePathStudent = filePathStudent;
         this.users = users;
         
     }
@@ -31,39 +33,71 @@ public class UserApplication implements Serializable{
     /**
      * @return the filePath
      */
-    public String getFilePath() {
-        return filePath;
+    public String getFilePathStudent() {
+        return filePathStudent;
+    }
+       public String getFilePathTutor() {
+        return filePathTutor;
     }
 
     /**
      * @param filePath the filePath to set
      */
- public void setFilePath(String filePath) throws JAXBException, FileNotFoundException, IOException {
+ public void setFilePathStudent(String filePathStudent) throws JAXBException, FileNotFoundException, IOException {
         // Create the unmarshaller
-        this.filePath = filePath;
+        this.filePathStudent = filePathStudent;
         JAXBContext jc = JAXBContext.newInstance(Users.class);
         Unmarshaller u = jc.createUnmarshaller();
  
 // Now unmarshal the object from the file
-        FileInputStream fin = new FileInputStream(filePath);
+        FileInputStream fin = new FileInputStream(filePathStudent);
         setUsers((Users)u.unmarshal(fin)); // This loads the "shop" object
         fin.close();
     }
-    public void updateXML(Users users, String filePath) throws Exception {
+  public void setFilePathTutor(String filePathTutor) throws JAXBException, FileNotFoundException, IOException {
+        // Create the unmarshaller
+        this.filePathTutor = filePathTutor;
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Unmarshaller u = jc.createUnmarshaller();
+ 
+// Now unmarshal the object from the file
+        FileInputStream fin = new FileInputStream(filePathTutor);
+        setUsers((Users)u.unmarshal(fin)); // This loads the "shop" object
+        fin.close();
+    }
+    public void updateTutors(Users users, String filePathTutor) throws Exception {
         this.users = users;
-        this.filePath = filePath;
+        this.filePathTutor = filePathTutor;
         JAXBContext jc = JAXBContext.newInstance(Users.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(filePath);
+        FileOutputStream fout = new FileOutputStream(filePathTutor);
         m.marshal(users, fout);
         fout.close();
     }
-        public void saveUsers() throws JAXBException, IOException {
+        public void updateStudents(Users users, String filePathStudent) throws Exception {
+        this.users = users;
+        this.filePathStudent = filePathStudent;
         JAXBContext jc = JAXBContext.newInstance(Users.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        FileOutputStream fout = new FileOutputStream(filePath);
+        FileOutputStream fout = new FileOutputStream(filePathStudent);
+        m.marshal(users, fout);
+        fout.close();
+    }
+        public void saveUsersStudent(String filePathStudent) throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePathStudent);
+        m.marshal(users, fout);
+        fout.close();
+    }
+        public void saveUsersTutor(String filePathTutir) throws JAXBException, IOException {
+        JAXBContext jc = JAXBContext.newInstance(Users.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePathTutor);
         m.marshal(users, fout);
         fout.close();
     }
