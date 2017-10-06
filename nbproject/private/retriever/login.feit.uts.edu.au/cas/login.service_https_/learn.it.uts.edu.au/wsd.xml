@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+	    <title>FEIT Website Single Sign On</title>
+        
+           
+           
+                
+                <link type="text/css" rel="stylesheet" href="themes/feit/cas.css;jsessionid=81B71884F289AFC64887EDD6D97C5418" />
+           
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="icon" href="/cas/favicon.ico;jsessionid=81B71884F289AFC64887EDD6D97C5418" type="image/x-icon" />
+	</head>
+	<body id="cas" class="fl-theme-iphone">
+    <div class="flc-screenNavigator-view-container">
+        <div class="fl-screenNavigator-view">
+            <div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
+                <h1 id="app-name" class="fl-table-cell">UTS:FEIT Website Single Sign On</h1>
+            </div>
+            <div id="content" class="fl-screenNavigator-scroll-container">
+
+
+
+
+  <div class="box fl-panel" id="login">
+			<form id="fm1" class="fm-v clearfix" action="/cas/login;jsessionid=81B71884F289AFC64887EDD6D97C5418?service=https%3a%2f%2flearn.it.uts.edu.au%2fwsd" method="post">
+                  
+                <!-- Congratulations on bringing CAS online!  The default authentication handler authenticates where usernames equal passwords: go ahead, try it out.  -->
+                    <h2>Enter your UTS ID Number and Password</h2>
+                    <div class="row fl-controls-left">
+                        <label for="username" class="fl-label"><span class="accesskey">U</span>TS ID Number::</label>
+						
+
+						
+						
+						<input id="username" name="username" class="required" tabindex="1" accesskey="u" type="text" value="" size="25" autocomplete="false"/>
+						
+                    </div>
+                    <div class="row fl-controls-left">
+                        <label for="password" class="fl-label"><span class="accesskey">P</span>assword:</label>
+						
+						
+						<input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
+                    </div>
+                    <div class="row check">
+                        <input id="warn" name="warn" value="true" tabindex="3" accesskey="w" type="checkbox" />
+                        <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label>
+                    </div>
+                    <div class="row btn-row">
+						<input type="hidden" name="lt" value="LT-349424-UQEI3IgBLGEfRomHT3c52cLwEg2d5W" />
+						<input type="hidden" name="execution" value="e1s1" />
+						<input type="hidden" name="_eventId" value="submit" />
+
+                        <input class="btn-submit" name="submit" accesskey="l" value="LOGIN" tabindex="4" type="submit" />
+                        <input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset" />
+                    </div>
+            </form>
+          </div>
+            <div id="sidebar">
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">For security reasons, please Log Out and Exit your web browser when you are done accessing services that require authentication!</p>
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">Please be aware that use of any of UTS IT facilities are governed by the Acceptable Use of Information Technology Facilities policy. <a href="http://www.gsu.uts.edu.au/policies/itfacilities.html">Click here</a> to read the policy and know your obligations in using all UTS IT facilities including Internet and email access.</p>
+            </div>
+
+                </div>
+                <div id="footer" class="fl-panel fl-note fl-bevel-white fl-font-size-80">
+                        <a id="feit" href="http://www.uts.edu.au" title="go to UTS home page"></a>
+                    <div id="copyright">
+                        <p>Copyright &copy; 2012 University of Technology, Sydney</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/cas/js/cas.js;jsessionid=81B71884F289AFC64887EDD6D97C5418"></script>
+    </body>
+</html>
+
+

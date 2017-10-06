@@ -3,19 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/web/welcome.jsp</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/web/main.jsp</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/Tutor.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/Students.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/TestJAXB.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/Users.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/DiaryApplication.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/web/registerAction.jsp</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/User.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/web/index.jsp</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/UserApplication.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/src/java/uts/wsd/Tutors.java</file>
-            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/WSD-project/web/register.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/registerAction.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/register.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/src/java/uts/wsd/UserApplication.java</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/testRegister.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/users.xsd</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/main.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/NetBeansProjects/gitproj/web/WEB-INF/students.xml</file>
         </group>
     </open-files>
 </project-private>
