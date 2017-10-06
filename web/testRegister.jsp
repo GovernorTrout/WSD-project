@@ -1,7 +1,7 @@
 <%-- 
     Document   : testRegister
     Created on : 02/10/2017, 2:01:51 PM
-    Author     : sawicky
+    Author     : Proma
 --%>
 
 <%@page import="uts.wsd.*"%>
@@ -34,7 +34,7 @@
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
             if (type.equals("Student") && type!=null) {
-                User user = new User(type, name, email, password, dob);
+                User user = new User(name, email, password, type, dob);
                 session.setAttribute("user", user);
                 if (users != null) {
                     users.addUser(user);
@@ -45,7 +45,7 @@
 
         } else if (type.equals("Tutor") && type!=null) {
             String specialty = request.getParameter("specialty");
-            User user = new User(type, name, email, password, dob, specialty);
+            User user = new User(name, email, password, type, dob, specialty);
             session.setAttribute("user", user);
             if (users!=null) {
                 users.addUser(user);

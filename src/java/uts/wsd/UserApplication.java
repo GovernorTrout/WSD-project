@@ -7,7 +7,7 @@ package uts.wsd;
 
 /**
  *
- * @author sawicky
+ * @author Proma
  */
 import java.util.*;
 import java.io.*;
@@ -15,8 +15,6 @@ import javax.xml.bind.*;
 public class UserApplication implements Serializable{
     private String filePathStudent;
     private String filePathTutor;
-    private Tutors tutors;
-    private Students students;
     private Users users;
     public UserApplication()
     { 
@@ -106,30 +104,6 @@ public class UserApplication implements Serializable{
     /**
      * @return the tutors
      */
-    public Tutors getTutors() {
-        return tutors;
-    }
-
-    /**
-     * @param tutors the tutors to set
-     */
-    public void setTutors(Tutors tutors) {
-        this.tutors = tutors;
-    }
-
-    /**
-     * @return the students
-     */
-    public Students getStudents() {
-        return students;
-    }
-
-    /**
-     * @param students the students to set
-     */
-    public void setStudents(Students students) {
-        this.students = students;
-    }
 
     /**
      * @return the users

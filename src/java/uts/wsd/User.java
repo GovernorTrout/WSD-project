@@ -13,14 +13,15 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User implements Serializable {
-    @XmlElement(name = "type")
-    private String type;
     @XmlElement(name = "name")
-    private String name; 
+    private String name;
     @XmlElement(name = "email")
-    private String email;  
+    private String email;    
     @XmlElement(name = "password")
     private String password;
+    @XmlElement(name = "type")
+    private String type;
+
     @XmlElement(name = "dob")
     private String dob;
     @XmlElement(name ="subject")
@@ -33,21 +34,22 @@ public class User implements Serializable {
     public User(){
        
     }
-        public User(String type, String name, String email, String password, String dob) {
+        public User(String name, String email, String password, String type, String dob) {
         
-        this.type = type;
+        
         this.name = name;
         this.email = email;
         this.password = password;
+        this.type = type;
         this.dob = dob;
     }
 
-    public User(String type, String name, String email, String password, String dob, String subject) {
+    public User(String name, String email, String password, String type, String dob, String subject) {
         
-        this.type = type;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.type = type;
         this.dob = dob;
         this.subject = subject;
     }

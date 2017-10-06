@@ -1,7 +1,7 @@
 <%-- 
     Document   : registerAction
     Created on : 02/10/2017, 2:00:51 AM
-    Author     : sawicky
+    Author     : Proma
 --%>
 
 <%@page import="uts.wsd.*"%>

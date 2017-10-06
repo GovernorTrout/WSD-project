@@ -1,7 +1,7 @@
 <%-- 
     Document   : logout
     Created on : 02/10/2017, 1:31:17 PM
-    Author     : sawicky
+    Author     : Proma
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

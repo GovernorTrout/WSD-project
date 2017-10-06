@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 10/09/2017, 1:49:56 PM
-    Author     : sawicky
+    Author     : Proma
 --%>
 
 <%@page import="uts.wsd.*"  import="java.util.*"contentType="text/html" pageEncoding="UTF-8"%>
