@@ -11,7 +11,7 @@
     <body>
     
         <h1 id="h">Register</h1>
-        <form method="post" action="testRegister.jsp">
+        <form method="post" action="registerAction.jsp">
                  <script type="text/javascript">
                 function tutorFunc($i){
                     if ($i == "Tutor") {;

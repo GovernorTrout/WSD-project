@@ -14,12 +14,13 @@
         <title>Home Page</title>
     </head>
     <body>
-        <%User user = (User)session.getAttribute("user");%>
+        <%Tutor tutor = (Tutor)session.getAttribute("tutor");%>
+        <%Student student = (Student)session.getAttribute("student");%>
         
         <div class="logopic"><img class ="logopic" src="logo2.png"></div>
-        <% if (user.getType().equals("Student")) { 
-            if (user != null) { %>
-                <p id="p2">You are logged in as <%=user.getName()%> &lt; <%=user.getEmail() %> &gt;</p>
+        <% if (session.getAttribute("student") != null) { 
+            if (student != null) { %>
+                <p id="p2">You are logged in as <%=student.getName()%> &lt; <%=student.getEmail() %> &gt;</p>
                 <p id="p2"> Search for a tutor </a></p>
                 <form method="post" action ="main.jsp">
                 <table class="register">
@@ -40,9 +41,9 @@
                 <p id="p2"><a href="edit_user.jsp"> My account </a></p>
                 <p id="p2"><a href="booking.jsp"> Booking </a></p>
                 <% } %>
-         <% } else if (user.getType().equals("Tutor")) {
-            if (user != null) { %>
-                <p id="p2">You are logged in as <%=user.getName()%> &lt; <%=user.getEmail() %> &gt;</p>
+         <% } else if (session.getAttribute("tutor") != null) {
+            if (tutor != null) { %>
+                <p id="p2">You are logged in as <%=tutor.getName()%> &lt; <%=tutor.getEmail() %> &gt;</p>
                 <p id="p2">Click <a href="logout.jsp"> Logout </a></p>   
                 <p id="p2"><a href="edit_user.jsp"> My account </a></p>
                 <p id="p2"><a href="booking.jsp"> Booking </a></p>
