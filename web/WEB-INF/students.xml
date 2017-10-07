@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<users xmlns="http://www.uts.edu.au/31284/wsd-diary"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-diary users.xsd">
-    <user>        
-        <name>888999</name>    
-        <email>ryan@ryanheise.com</email>
-        <password>test</password>
+<students>
+    <student>        
+        <name>test</name>
+        <email>testemail</email>
+        <password>testpassword</password>
         <type>Student</type>
-	   <subject>nothing</subject>
-	   <dob>12-05-2015</dob>
-    </user>
-</users>
+        <dob>testdob></dob>
+    </student>
+</students>

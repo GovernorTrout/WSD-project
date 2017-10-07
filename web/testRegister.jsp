@@ -17,11 +17,14 @@
             String filePathBooking = application.getRealPath("WEB-INF/bookings.xml");
             String type = request.getParameter("type"); %>
             
-        <jsp:useBean id="userApp" class = "uts.wsd.UserApplication" scope ="application">
-                 <jsp:setProperty name ="userApp" property="filePathStudent" value ="<%=filePathStudent%>"/>
-                <jsp:setProperty name ="userApp" property="filePathTutor" value ="<%=filePathTutor%>"/>          
+        <jsp:useBean id="studentApp" class = "uts.wsd.StudentApplication" scope ="application">
+                 <jsp:setProperty name ="studentApp" property="filePath" value ="<%=filePathStudent%>"/>    
         </jsp:useBean>
-        <%Users users = userApp.getUsers();%>
+        <jsp:useBean id="tutorApp" class = "uts.wsd.TutorApplication" scope ="application">
+                 <jsp:setProperty name ="tutorApp" property="filePath" value ="<%=filePathTutor%>"/>    
+        </jsp:useBean>
+        <%Students students = studentApp.getStudents();%>
+        <%Tutors tutors = tutorApp.getTutors();%>
 
     </head>
     <body>
@@ -34,28 +37,27 @@
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
             if (type.equals("Student") && type!=null) {
-                User user = new User(name, email, password, type, dob);
-                session.setAttribute("user", user);
-                if (users != null) {
-                    users.addUser(user);
-                    userApp.updateStudents(users, filePathStudent);
-        } else {
-        %>Null user<%
-            }
-
-        } else if (type.equals("Tutor") && type!=null) {
-            String specialty = request.getParameter("specialty");
-            User user = new User(name, email, password, type, dob, specialty);
-            session.setAttribute("user", user);
-            if (users!=null) {
-                users.addUser(user);
-                userApp.updateTutors(users, filePathTutor);
+                Student student = new Student(name, email, password, type, dob);
+                session.setAttribute("student", student);
+                if (students != null) {
+                    students.addStudent(student);
+                    studentApp.updateStudents(students, filePathStudent);
                 } else {
-                %>Null user<%
+                    %>Null user<%
                 }
-                    
-        } else {
-        %>Type invalid <%
+
+            } else if (type.equals("Tutor") && type!=null) {
+                String specialty = request.getParameter("specialty");
+                Tutor tutor = new Tutor(name, email, password, type, dob, specialty);
+                session.setAttribute("tutor", tutor);
+                if (tutors!=null) {
+                    tutors.addTutor(tutor);
+                    tutorApp.updateTutors(tutors, filePathTutor);
+                } else {
+                    %>Null user<%
+                }                  
+            } else {
+                %>Type invalid <%
             }%>     
     </body>
 </html>
