@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="bookings.xsl"?>
+<bookings>
+    <booking id ="0">        
+        <studentEmail>testemail@gmail.com</studentEmail>
+        <studentName>Test Name</studentName>
+        <tutorEmail>testemail@gmail.com</tutorEmail>
+        <tutorName>Test Name</tutorName>
+        <subject>WSD</subject>
+        <status>Test Status</status>
+    </booking>
+</bookings>

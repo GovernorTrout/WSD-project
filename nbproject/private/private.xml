@@ -3,14 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/testRegister.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/bookings.xsl</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/StudentApplication.java</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Tutor.java</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Tutors.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/tutors.xml</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Student.java</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Students.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Tutors.xsd</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/booking.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/register.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/registerAction.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Booking.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Bookings.xsd</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Tutor.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Students.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Bookings.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/BookingApplication.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/bookings.xml</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/students.xml</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/TutorApplication.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/main.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Students.xsd</file>
         </group>
     </open-files>

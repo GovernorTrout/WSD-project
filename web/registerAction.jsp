@@ -24,7 +24,12 @@
         <jsp:useBean id="tutorApp" class = "uts.wsd.TutorApplication" scope ="application">
                  <jsp:setProperty name ="tutorApp" property="filePath" value ="<%=filePathTutor%>"/>    
         </jsp:useBean>
+        <jsp:useBean id="bookingApp" class = "uts.wsd.BookingApplication" scope ="application">
+                 <jsp:setProperty name ="bookingApp" property="filePath" value ="<%=filePathBooking%>"/>    
+        </jsp:useBean>
         <%studentApp.setFilePath(filePathStudent);%>
+        <%tutorApp.setFilePath(filePathTutor);%>
+        <%bookingApp.setFilePath(filePathBooking);%>
         <%Students students = studentApp.getStudents();%>
         <%Tutors tutors = tutorApp.getTutors();%>
         <%studentApp.saveStudents();%>
