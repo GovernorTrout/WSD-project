@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.*;
  * @author sawicky
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "students")
+@XmlRootElement(name="students")
 public class Students implements Serializable{
     @XmlElement(name = "student")
     private ArrayList<Student> list = new ArrayList<Student>();

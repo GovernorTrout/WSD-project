@@ -80,12 +80,12 @@
                             <tr><td><a href="completeBooking.jsp?id=<%=b.getId()%>">Complete this booking</a></td></tr>
                         </table> <%
                     }
-                } else {
+                }   
+            }
+                if (student==null && tutor == null) {
                     %><p id="p2">You're not logged in</p><br>
                     <p id="p2"><a href="login.jsp">Login</a> | <a href="register.jsp"> Register</a></p><%
                 }
-                    
-            }
             if (count==0){
                 %><p id ="p2">You do not own any bookings</p><%  
             } 

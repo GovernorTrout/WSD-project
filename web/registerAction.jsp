@@ -48,7 +48,22 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
-            if (students.getStudent(email) == null && tutors.getTutor(email) == null) {
+             if (dob.isEmpty()) {
+                %><p id ="p2"><font color="red">You cannot leave your date of birth empty!</font></p><%
+            }
+            if (password.isEmpty()) {
+                %><p id ="p2"><font color="red">You cannot leave your password empty!</font></p><%
+            } 
+            if (name.isEmpty()) {
+                %><p id ="p2"><font color="red">You cannot leave your name empty!</font></p><%
+            }
+            if (email.isEmpty()) {
+                %><p id ="p2"><font color="red">You cannot leave your email empty!</font></p><%
+            }
+            if (email.isEmpty() || dob.isEmpty() || name.isEmpty() || password.isEmpty()) {
+                %><p id ="p2">Invalid registration, please try again <a href="register.jsp">here</a></p><%
+            }
+            else if (students.getStudent(email) == null && tutors.getTutor(email) == null && !dob.isEmpty() && !password.isEmpty() && !name.isEmpty() && !email.isEmpty()) {
                 if (type.equals("Student") && type!=null) {
                     Student student = new Student(name, email, password, type, dob);             
                     session.setAttribute("student", student);
@@ -90,8 +105,8 @@
                     timer = setTimeout('redirect()', time * 1000);
                 </script>
                 <p id="p2">Thank you for registering!<br>You will be taken to the main page momentarily..</p>
-            <% } else { %>
-            <p id ="p2"> User already exists, exiting</p>
-            <% } %>   
+            <% } else if (students.getStudent(email) != null || tutors.getTutor(email) != null){ %>
+            <p id ="p2"> User already exists, please try again <a href="register.jsp">here</a></p>
+            <% } %>
     </body>
 </html>

@@ -4,22 +4,23 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
- targetNamespace="http://www.uts.edu.au/31284/wsd-students"
- xmlns="http://www.uts.edu.au/31284/wsd-students"
+<xs:schema
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="https://www.w3schools.com"
+ xmlns="https://www.w3schools.com"
  elementFormDefault="qualified">
  
-    <xs:simpleType name="name">
+<xs:simpleType name="name">
         <xs:restriction base ="xs:string">
-            <xs:pattern value =".+"/>
+            <xs:pattern value ="([A-Z][a-z]+\s)*([A-Z][a-z]+\s*)"/>
         </xs:restriction>
-    </xs:simpleType>
+</xs:simpleType>
         <xs:simpleType name="email">
         <xs:restriction base ="xs:string">
-            <xs:pattern value =".+"/>
+            <xs:pattern value ="[A-Za-z\.\_]+@([a-z\-\.]+)+\.[a-z]+"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:element name = "students" >
+<xs:element name = "students" >
         <xs:complexType>
             <xs:sequence>
                 <xs:element name ="student" maxOccurs ="unbounded">
@@ -35,5 +36,5 @@ and open the template in the editor.
                 </xs:element>           
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
+</xs:element>
 </xs:schema>

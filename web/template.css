@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18/09/2017, 12:26:02 PM
+    Author     : Riley
+*/
+
+/*
+This is the CSS used for the template that is currently not implemented into the main.css file.
+When the template is complete, move the contents of this file to the main.css file.
+*/
+
+div.container {
+    width: 100%;
+    min-width: 38em; /*Change this to suit the minimum width required of the menu element*/
+}
+div.menu {
+    width: 80%;
+    height: 1em; /*It may be best to make most measurements in em to facilitate scaling*/
+    padding: 0.75em 10% 0.75em 10%;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 12pt;
+    word-spacing: 0.8em;
+}
+
+.menu a {
+    color: white;
+}
+
+div.menuleft {
+    float: left;
+}
+div.menuright {
+    float: right;
+    text-align: right;
+}
+
+div.content {
+    width: 80%;
+    padding: 2em 2em 2em 2em; /*Bypasses the height of the menu element at the top*/
+    margin-left: auto; /*Aligns to center*/
+    margin-right: auto;
+    background-color: whitesmoke;
+}
+div.footer {
+    width: 80%;
+    height: 2em;
+    background-color: black;
+    margin-left: auto; /*Aligns to center*/
+    margin-right: auto;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 0.6em;
+    padding: 0 2.5em 0 2.5em;
+    margin-bottom: 3em;
+}
