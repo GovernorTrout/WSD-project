@@ -23,6 +23,17 @@ table.register{
     margin-right:auto;
     font-family: helvetica;
 }
+table.results{
+    margin-left:auto;
+    margin-right:auto;
+    font-family:helvetica;
+    width: 500px;
+}
+tr.results2{
+    background-color: #4A4A4A;
+    color: white;
+    text-align: center;
+}
 div.main{
     margin-top: 30px;
 }

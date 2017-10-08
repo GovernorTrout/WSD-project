@@ -39,11 +39,11 @@
     <body>
         <div class="logopic"><img class ="logopic" src="logo2.png"></div>
         <ul class ="navigationbar">
-	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
-	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+	<li class ="navigation"><a class ="active" href="viewBooking.jsp">View a booking</a></li>
+	<li class ="navigation"><a href="booking.jsp">Booking Menu</a></li>
         </ul>
-        <p id ="p2">Please enter your booking ID to cancel</p>
-        <form method ="post" action ="cancelBooking.jsp">
+        <p id ="p2">Please enter your booking ID to view</p>
+        <form method ="post" action ="viewBooking.jsp">
             <table class ="register">
                 <tr><td>Booking ID:</td><td><input type ="number" name="id"></td></tr>\
                 <tr><td><input type = "submit" value ="Submit"></td></tr>
@@ -55,24 +55,34 @@
             if (id == bookings.getBooking(id).getId()) {
                 if (student != null) {
                     if (student.getName().equals(bookings.getBooking(id).getStudentName()) && student.getEmail().equals(bookings.getBooking(id).getStudentEmail())) {
-                        bookings.getBooking(id).setStatus("Cancelled");
-                        tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
-                        tutorApp.updateTutors(tutors, filePathTutor);
-                        bookingApp.updateBookings(bookings, filePathBooking); 
-                        %><p id ="p2">Booking cancelled!</p><%
+                        %><p id ="p2">Booking details:</p>
+                        <table class ="register">
+                            <tr><td>ID:</td><td><%=id%></td></tr>
+                            <tr><td>Student Name:</td><td><%=bookings.getBooking(id).getStudentName()%></td></tr>
+                            <tr><td>Student Email:</td><td><%=bookings.getBooking(id).getStudentEmail()%></td></tr>
+                            <tr><td>Tutor Name:</td><td><%=bookings.getBooking(id).getTutorName()%></td></tr>
+                            <tr><td>Tutor Email:</td><td><%=bookings.getBooking(id).getTutorEmail()%></td></tr>
+                            <tr><td>Subject:</td><td><%=bookings.getBooking(id).getSubject()%></td></tr>
+                            <tr><td>Status:</td><td><%=bookings.getBooking(id).getStatus()%></td></tr>
+                        </table> <%
                     } else {
                         %><p id ="p2">You do not own this booking</p><%  
                     }             
                 } else if (tutor != null) {
                     if (tutor.getName().equals(bookings.getBooking(id).getTutorName()) && tutor.getEmail().equals(bookings.getBooking(id).getTutorEmail())) {
-                        bookings.getBooking(id).setStatus("Cancelled");
-                        tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
-                        tutorApp.updateTutors(tutors, filePathTutor);
-                        bookingApp.updateBookings(bookings, filePathBooking); 
-                        %><p id ="p2">Booking cancelled!</p><%  
+                        %><p id ="p2">Booking details:</p>
+                        <table class ="register">
+                            <tr><td>ID:</td><td><%=id%></td></tr>
+                            <tr><td>Student Name:</td><td><%=bookings.getBooking(id).getStudentName()%></td></tr>
+                            <tr><td>Student Email:</td><td><%=bookings.getBooking(id).getStudentEmail()%></td></tr>
+                            <tr><td>Tutor Name:</td><td><%=bookings.getBooking(id).getTutorName()%></td></tr>
+                            <tr><td>Tutor Email:</td><td><%=bookings.getBooking(id).getTutorEmail()%></td></tr>
+                            <tr><td>Subject:</td><td><%=bookings.getBooking(id).getSubject()%></td></tr>
+                            <tr><td>Status:</td><td><%=bookings.getBooking(id).getStatus()%></td></tr>
+                        </table> <%
                     } else {
                         %><p id ="p2">You do not own this booking</p><%  
-                    }   
+                    }  
                 } else {
                     %><p id="p2">You're not logged in</p><br>
                     <p id="p2"><a href="login.jsp">Login</a> | <a href="register.jsp"> Register</a></p> 

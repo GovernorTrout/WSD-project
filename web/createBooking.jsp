@@ -38,6 +38,7 @@
         <%studentApp.saveStudents();%>
     </head>
     <body>
+        <div class="logopic"><img class ="logopic" src="logo2.png"></div>
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="createBooking.jsp">Create a booking</a></li>
 	<li class ="navigation"><a href="booking.jsp">Bookings menu</a></li>
