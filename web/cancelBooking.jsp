@@ -55,32 +55,36 @@
         </form>
         <% if (submitted != null && submitted.equals("yes")) {
             int id = Integer.parseInt(request.getParameter("id"));
-            if (id == bookings.getBooking(id).getId()) {
-                if (student != null) {
-                    if (student.getName().equals(bookings.getBooking(id).getStudentName()) && student.getEmail().equals(bookings.getBooking(id).getStudentEmail())) {
-                        bookings.getBooking(id).setStatus("Cancelled");
-                        tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
-                        tutorApp.updateTutors(tutors, filePathTutor);
-                        bookingApp.updateBookings(bookings, filePathBooking); 
-                        %><p id ="p2">Booking cancelled!</p><%
+            if (bookings.getBooking(id) != null) {
+                if (id == bookings.getBooking(id).getId()) {
+                    if (student != null) {
+                        if (student.getName().equals(bookings.getBooking(id).getStudentName()) && student.getEmail().equals(bookings.getBooking(id).getStudentEmail())) {
+                            bookings.getBooking(id).setStatus("Cancelled");
+                            tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
+                            tutorApp.updateTutors(tutors, filePathTutor);
+                            bookingApp.updateBookings(bookings, filePathBooking); 
+                            %><p id ="p2">Booking cancelled!</p><%
+                        } else {
+                            %><p id ="p2">You do not own this booking</p><%  
+                        }             
+                    } else if (tutor != null) {
+                        if (tutor.getName().equals(bookings.getBooking(id).getTutorName()) && tutor.getEmail().equals(bookings.getBooking(id).getTutorEmail())) {
+                            bookings.getBooking(id).setStatus("Cancelled");
+                            tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
+                            tutorApp.updateTutors(tutors, filePathTutor);
+                            bookingApp.updateBookings(bookings, filePathBooking); 
+                            %><p id ="p2">Booking cancelled!</p><%  
+                        } else {
+                            %><p id ="p2">You do not own this booking</p><%  
+                        }   
                     } else {
-                        %><p id ="p2">You do not own this booking</p><%  
-                    }             
-                } else if (tutor != null) {
-                    if (tutor.getName().equals(bookings.getBooking(id).getTutorName()) && tutor.getEmail().equals(bookings.getBooking(id).getTutorEmail())) {
-                        bookings.getBooking(id).setStatus("Cancelled");
-                        tutors.getTutor(bookings.getBooking(id).getTutorEmail()).setAvailability("Available");
-                        tutorApp.updateTutors(tutors, filePathTutor);
-                        bookingApp.updateBookings(bookings, filePathBooking); 
-                        %><p id ="p2">Booking cancelled!</p><%  
-                    } else {
-                        %><p id ="p2">You do not own this booking</p><%  
-                    }   
-                } else {
-                    %><p id="p2">You're not logged in</p><br>
-                    <p id="p2"><a href="login.jsp">Login</a> | <a href="register.jsp"> Register</a></p> 
-             <% }     
-            }
+                        %><p id="p2">You're not logged in</p><br>
+                        <p id="p2"><a href="login.jsp">Login</a> | <a href="register.jsp"> Register</a></p> 
+                 <% }     
+                }
+            } else {
+                 %><p id="p2"><font color="red">There was no booking with that ID</font></p><%
+}
         }%>
     </body>
 </html>

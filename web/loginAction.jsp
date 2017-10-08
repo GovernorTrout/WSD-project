@@ -27,6 +27,14 @@
         <%Students students = studentApp.getStudents();%>
         <%Tutors tutors = tutorApp.getTutors();%>   
     <body>
+          <div class="logopic"><img class ="logopic" src="logo2.png"></div>
+        <ul class ="navigationbar">
+	<li class ="navigation"><a class ="active" href="login.jsp">Login</a></li>
+	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        <li class ="navigation"><a href="register.jsp">Register</a></li>
+        
+
+        </ul>
         <% 
             String email = request.getParameter("email");
             String password = request.getParameter("password");
@@ -71,7 +79,29 @@
                 </script>
                 <p id="p2">Thank you for logging in!<br>You will be taken to the main page momentarily..</p>               
             <% } else if (tutor == null && student == null) {
-            %><p id ="p2"><font color ="red">Invalid login details! Please try again</font></p>
+                boolean emailFlag = false;
+                boolean passwordFlag = false;
+                %><p id ="p2"><font color ="red">Invalid login details! Please try again</font></p><%
+                    for (Tutor t : tutors.getList()) {
+                        if (email!= null && !email.equals(t.getEmail())) {
+                         emailFlag = true;
+                        } else if (email != null && email.equals(t.getEmail())) {
+                         passwordFlag = true;   
+                        }
+                    }
+                for (Student s : students.getList()) {
+                        if (email!= null && !email.equals(s.getEmail())) {
+                         emailFlag = true;
+                        } else if (email != null && email.equals(s.getEmail())) {
+                         passwordFlag = true;   
+                        }
+                }
+                if (emailFlag == true && passwordFlag == false) {
+                    %><p id ="p2"><font color ="red">Email not found</font></p><%
+                 } else if (passwordFlag == true) {
+                    %><p id ="p2"><font color ="red">Incorrect password</font></p><%
+                 }
+            %>
                 <p id ="h">Please enter your login details</p>
                 <form method="post" action="loginAction.jsp">
                 <table class ="register">

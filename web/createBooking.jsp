@@ -42,15 +42,16 @@
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="createBooking.jsp">Create a booking</a></li>
 	<li class ="navigation"><a href="booking.jsp">Bookings menu</a></li>
-	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
             <br>
         <form method ="post" action="createBooking.jsp">
             <div class ="main">
             <table class ="register">
                 
-                <tr><td>Tutor email:</td><td><input type ="text" name ="tutorEmail"></td></tr>
-                <tr><td>Subject</td><td><input type ="text" name ="subject"></td></tr>
+                <tr><td>Tutor email:</td><td><input type ="text" name ="tutorEmail" value="${param.email}"></td></tr>
+                <tr><td>Subject</td><td><input type ="text" name ="subject" value ="${param.subject}"></td></tr>
                 <tr><td><input type ="submit"></td>
                     
             </table>

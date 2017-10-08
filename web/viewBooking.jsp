@@ -41,6 +41,8 @@
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="viewBooking.jsp">View a booking</a></li>
 	<li class ="navigation"><a href="booking.jsp">Booking Menu</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <p id ="p2">Please enter your booking ID to view</p>
         <form method ="post" action ="viewBooking.jsp">

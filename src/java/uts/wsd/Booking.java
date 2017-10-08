@@ -39,8 +39,7 @@ public class Booking implements Serializable {
     }
 
     /**
-     * @return the id
-     */
+     *\ @return the id*/
     public int getId() {
         return id;
     }
@@ -55,6 +54,7 @@ public class Booking implements Serializable {
     /**
      * @return the studentEmail
      */
+
     public String getStudentEmail() {
         return studentEmail;
     }
@@ -62,6 +62,7 @@ public class Booking implements Serializable {
     /**
      * @param studentEmail the studentEmail to set
      */
+ 
     public void setStudentEmail(String studentEmail) {
         this.studentEmail = studentEmail;
     }
@@ -69,6 +70,7 @@ public class Booking implements Serializable {
     /**
      * @return the studentName
      */
+ 
     public String getStudentName() {
         return studentName;
     }
@@ -76,6 +78,7 @@ public class Booking implements Serializable {
     /**
      * @param studentName the studentName to set
      */
+
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
@@ -83,6 +86,7 @@ public class Booking implements Serializable {
     /**
      * @return the tutorEmail
      */
+ 
     public String getTutorEmail() {
         return tutorEmail;
     }
@@ -90,6 +94,7 @@ public class Booking implements Serializable {
     /**
      * @param tutorEmail the tutorEmail to set
      */
+  
     public void setTutorEmail(String tutorEmail) {
         this.tutorEmail = tutorEmail;
     }
@@ -97,6 +102,7 @@ public class Booking implements Serializable {
     /**
      * @return the tutorName
      */
+
     public String getTutorName() {
         return tutorName;
     }
@@ -104,6 +110,7 @@ public class Booking implements Serializable {
     /**
      * @param tutorName the tutorName to set
      */
+  
     public void setTutorName(String tutorName) {
         this.tutorName = tutorName;
     }
@@ -111,6 +118,7 @@ public class Booking implements Serializable {
     /**
      * @return the subject
      */
+  
     public String getSubject() {
         return subject;
     }
@@ -118,6 +126,7 @@ public class Booking implements Serializable {
     /**
      * @param subject the subject to set
      */
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
@@ -125,6 +134,7 @@ public class Booking implements Serializable {
     /**
      * @return the status
      */
+ 
     public String getStatus() {
         return status;
     }
@@ -132,6 +142,7 @@ public class Booking implements Serializable {
     /**
      * @param status the status to set
      */
+   
     public void setStatus(String status) {
         this.status = status;
     }

@@ -28,6 +28,17 @@ table.results{
     margin-right:auto;
     font-family:helvetica;
     width: 500px;
+    
+}
+table.resultsdynamic{
+    table-layout:fixed;
+    margin-left:auto;
+    margin-right:auto;
+    font-family:helvetica;
+    width:100%k
+}
+td.dynamic{
+    width:calc(100%/5);
 }
 tr.results2{
     background-color: #4A4A4A;

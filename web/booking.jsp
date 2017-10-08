@@ -17,11 +17,14 @@
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="booking.jsp">Booking Menu</a></li>
 	<li class ="navigation"><a href="booking.jsp">Booking Menu</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <%Tutor tutor = (Tutor)session.getAttribute("tutor");%>
         <%Student student = (Student)session.getAttribute("student");%>
-        <p id ="p2"><a href ="viewBookings.jsp">View all bookings</a></p><br>
+        <p id ="p2"><a href ="viewMyBookings.jsp">View all my bookings</a></p><br>
         <p id ="p2"><a href ="viewBooking.jsp">View a specific booking</a></p><br>
+        <p id ="p2"><a href ="viewActiveBookings.jsp">View active bookings</a></p><br>
         <p id ="p2"><a href="cancelBooking.jsp">Cancel a booking</a></p><br>
         <%if (student!=null) {%>
             <p id ="p2"><a href ="createBooking.jsp">Create a booking</a></p>

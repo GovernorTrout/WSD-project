@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="uts.wsd.*"  import="java.util.*"contentType="text/html" pageEncoding="UTF-8"%>
-
+<jsp:forward page ="main.jsp"></jsp:forward>
 <!DOCTYPE html>
 <html>
     <link rel = "stylesheet" type = "text/css" HREF = "main.css">
@@ -13,8 +13,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
     </head>
-    <body>
-         <p id="p2">You're not logged in</p><br>
-         <p id="p2"><a href="login.jsp">Login</a> | <a href="register.jsp"> Register</a></p>          
+    <body>      
     </body>
 </html>

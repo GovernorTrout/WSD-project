@@ -36,13 +36,19 @@
 
     </head>
     <body>
+        <div class="logopic"><img class ="logopic" src="logo2.png"></div>
+        <ul class ="navigationbar">
+	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
+        </ul>
         <%
             String type = request.getParameter("type"); 
             String name = request.getParameter("name");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
-            if (students.getStudent(email) == null) {
+            if (students.getStudent(email) == null && tutors.getTutor(email) == null) {
                 if (type.equals("Student") && type!=null) {
                     Student student = new Student(name, email, password, type, dob);             
                     session.setAttribute("student", student);

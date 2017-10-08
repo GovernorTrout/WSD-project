@@ -44,7 +44,8 @@
         <div class="logopic"><img class ="logopic" src="logo2.png"></div>
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
-	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <% if (session.getAttribute("student") != null) { 
             if (student != null) { %>
@@ -83,7 +84,7 @@
                         //Search using subject only
                             for (Tutor t : tutors.getList()) {
                             if (subject.equals(t.getSubject())) {
-                            %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                            %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }    
                             }
                         } 
@@ -91,48 +92,48 @@
                         //Search using subject and Tutor name
                             for (Tutor t : tutors.getList()) {
                             if (subject.equals(t.getSubject()) && tutorName.equals(t.getName())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }   
                         } }
                         else if (!subject.isEmpty() && !tutorName.isEmpty() && (tutorStatus=="Available" || tutorStatus=="Unavailable")) {
                         //Search using subject, tutorname and availability
                             for (Tutor t : tutors.getList()) {
                             if (subject.equals(t.getSubject()) && tutorName.equals(t.getName()) && tutorStatus.equals(t.getAvailability())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }   
                         } }
                         else if (!subject.isEmpty() && tutorName.isEmpty() && (tutorStatus=="Available" || tutorStatus=="Unavailable")) {
                         //Search using subject and availability
                         for (Tutor t : tutors.getList()) {
                         if (subject.equals(t.getSubject()) && tutorStatus.equals(t.getAvailability())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }
                         } }
                         else if (subject.isEmpty() && !tutorName.isEmpty() && tutorStatus==null) {
                         //Search using tutor name
                         for (Tutor t : tutors.getList()) {
                         if (tutorName.equals(t.getName())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }   
                         } }
                         else if (subject.isEmpty() && !tutorName.isEmpty() && tutorStatus!=null) {
                         //Search using tutor name and availability
                         for (Tutor t : tutors.getList()) {
                         if (tutorName.equals(t.getName()) && tutorStatus.equals(t.getAvailability())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }   
                         } }
                         else if (subject.isEmpty() && tutorName.isEmpty() && tutorStatus!=null) {
                         //Search using availability
                         for (Tutor t : tutors.getList()) {
                         if (tutorStatus.equals(t.getAvailability())) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                             }   
                         } }
-                        else if (subject.isEmpty() && tutorName.isEmpty() && tutorStatus==null) {
+                        else {
                         //Search all results
                                 for (Tutor t : tutors.getList()) {
-                                %><tr><td><a href ="booking.jsp"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
+                                %><tr><td><a href ="createBooking.jsp?email=<%=t.getEmail()%>&subject=<%=t.getSubject()%>"><%=t.getName()%></a></td><td><%=t.getEmail()%></td><td><%=t.getSubject()%></td><td><%=t.getAvailability()%></td></tr><%
                         } }                       
                     
                 } %>
