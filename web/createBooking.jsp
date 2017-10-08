@@ -3,6 +3,7 @@
     Created on : 07/10/2017, 10:40:22 PM
     Author     : sawicky
 --%>
+<%@page import="java.lang.String"%>
 <%@page import="uts.wsd.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -31,25 +32,61 @@
         <%bookingApp.setFilePath(filePathBooking);%>
         <%Students students = studentApp.getStudents();%>
         <%Tutors tutors = tutorApp.getTutors();%>
+        <%Bookings bookings = bookingApp.getBookings();%>
+        <%bookingApp.saveBookings();%>
+        <%tutorApp.saveTutors();%>
         <%studentApp.saveStudents();%>
     </head>
     <body>
+        <ul class ="navigationbar">
+	<li class ="navigation"><a class ="active" href="createBooking.jsp">Create a booking</a></li>
+	<li class ="navigation"><a href="booking.jsp">Bookings menu</a></li>
+	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        </ul>
+            <br>
         <form method ="post" action="createBooking.jsp">
+            <div class ="main">
             <table class ="register">
-                <tr><td>Tutor name:</td><td><input type ="text" name ="tutorName"></td></tr>
+                
+                <tr><td>Tutor email:</td><td><input type ="text" name ="tutorEmail"></td></tr>
                 <tr><td>Subject</td><td><input type ="text" name ="subject"></td></tr>
                 <tr><td><input type ="submit"></td>
+                    
             </table>
+                </div>
             <input type ="hidden" name="created" value ="yes">
         </form>
-        <% if (created!=null) { %>
-            <% String tutorName = request.getParameter("tutorName");
-            String subject = request.getParameter("subject");%>
-            <p id ="p2">Booking created! Details:<br></p>
-            <p id ="p2">Tutor name: <%=tutorName%></p>
-            <p id ="p2">Subject name: <%=subject%></p>
-            <p id ="p2">Student name: <%=student.getName()%></p>
-            <p id ="p2">Student email: <%=student.getEmail()%></p>  
+        <% if (created!=null) { 
+            int id = 0;
+            for (Booking booking : bookings.getList()) {
+                if (id == booking.getId()) {
+                    id++;
+                }
+            }
+            String studentEmail = student.getEmail();
+            String studentName = student.getName();
+            String tutorEmail = request.getParameter("tutorEmail");
+            String tutorName = tutors.getTutor(tutorEmail).getName();
+            String avail = tutors.getTutor(tutorEmail).getAvailability();
+            String subject = request.getParameter("subject");
+            if (avail!=null && avail.equals("Unavailable")) {
+                %><p id ="p2">Tutor is currently unavailable, please select another tutor</p><%
+            } else if (avail!=null){
+                String status = "Active";
+                Booking booking = new Booking(id, studentEmail, studentName, tutorEmail, tutorName, subject, status);
+                bookings.addBooking(booking);
+                tutors.getTutor(tutorEmail).setAvailability("Unavailable");
+                tutorApp.updateTutors(tutors, filePathTutor);
+                bookingApp.updateBookings(bookings, filePathBooking);
+                
+                %>
+                <p id ="p2">Booking created! Details:<br></p>
+                <p id ="p2">Tutor name: <%=tutorName%></p>
+                <p id ="p2">Subject name: <%=subject%></p>
+                <p id ="p2">Student name: <%=student.getName()%></p>
+                <p id ="p2">Student email: <%=student.getEmail()%></p> 
+                <p id ="p2">Your unique booking ID: <%=id%></p>
+            <%}%>
         <%}%>
     </body>
 </html>

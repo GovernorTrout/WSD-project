@@ -54,8 +54,9 @@
                         %>Null user<%
                     }
                 } else if (type.equals("Tutor") && type!=null) {
+                    String status = "Available";
                     String specialty = request.getParameter("specialty");
-                    Tutor tutor = new Tutor(name, email, password, type, dob, specialty);
+                    Tutor tutor = new Tutor(name, email, password, type, dob, specialty, status);
                     session.setAttribute("tutor", tutor);
                     if (tutors!=null) {
                         tutors.addTutor(tutor);
@@ -67,7 +68,7 @@
                     %>Type invalid <%
                 } %>
                 <script LANGUAGE="JavaScript">
-                         // redirect to main after 5 seconds
+                         // redirect to main after 3 seconds
                     var time = 3; 
                     var timelong = 0;
                          //reduce time

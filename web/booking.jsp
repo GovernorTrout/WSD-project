@@ -15,7 +15,9 @@
     <body>
         <%Tutor tutor = (Tutor)session.getAttribute("tutor");%>
         <%Student student = (Student)session.getAttribute("student");%>
-        <p id ="p2"><a href ="viewBookings.jsp">View bookings</a></p><br>
+        <p id ="p2"><a href ="viewBookings.jsp">View all bookings</a></p><br>
+        <p id ="p2"><a href ="viewBookings.jsp">View a specific booking</a></p><br>
+        <p id ="p2"><a href="cancelBooking.jsp">Cancel a booking</a></p><br>
         <%if (student!=null) {%>
             <p id ="p2"><a href ="createBooking.jsp">Create a booking</a></p>
         <%}%>

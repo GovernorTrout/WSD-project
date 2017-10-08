@@ -13,6 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <div class="logopic"><img class ="logopic" src="logo2.png"></div>
         
         <%
             session.invalidate();

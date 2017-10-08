@@ -4,13 +4,17 @@
 <html>
     <link rel = "stylesheet" type = "text/css" HREF = "main.css">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text
+              /html; charset=UTF-8">
         <title>Register</title>
-
     </head>
     <body>
-    
-        <h1 id="h">Register</h1>
+        <div class="logopic"><img class ="logopic" src="logo2.png"></div>
+        <ul class ="navigationbar">
+	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
+	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        </ul>
+        <h1 id="h" >Register</h1>
         <form method="post" action="registerAction.jsp">
                  <script type="text/javascript">
                 function tutorFunc($i){

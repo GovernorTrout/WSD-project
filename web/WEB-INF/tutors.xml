@@ -7,6 +7,6 @@
         <type>Tutor</type>
         <dob>testdob></dob>
         <subject>testsubject</subject>    
-        <avail>testavail</avail>
+        <availability>testavail</availability>
     </tutor>
 </tutors>

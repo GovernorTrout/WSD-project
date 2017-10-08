@@ -14,10 +14,15 @@
         <title>Home Page</title>
     </head>
     <body>
+        
         <%Tutor tutor = (Tutor)session.getAttribute("tutor");%>
         <%Student student = (Student)session.getAttribute("student");%>
         
         <div class="logopic"><img class ="logopic" src="logo2.png"></div>
+        <ul class ="navigationbar">
+	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
+	<li class ="navigation"><a href="main.jsp">Main Page</a></li>
+        </ul>
         <% if (session.getAttribute("student") != null) { 
             if (student != null) { %>
                 <p id="p2">You are logged in as <%=student.getName()%> &lt; <%=student.getEmail() %> &gt;</p>

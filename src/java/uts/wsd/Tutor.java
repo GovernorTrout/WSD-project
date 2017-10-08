@@ -25,17 +25,20 @@ public class Tutor implements Serializable {
     private String dob;
     @XmlElement(name ="subject")
     private String subject;
+    @XmlElement(name ="availability")
+    private String availability;
     
     public Tutor() {
         super();
     }
-    public Tutor(String name, String email, String password, String type, String dob, String subject) {
+    public Tutor(String name, String email, String password, String type, String dob, String subject, String availability) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.type = type;
         this.dob = dob;
         this.subject = subject;
+        this.availability = availability;
     }
 
     /**
@@ -120,5 +123,19 @@ public class Tutor implements Serializable {
      */
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    /**
+     * @return the availability
+     */
+    public String getAvailability() {
+        return availability;
+    }
+
+    /**
+     * @param availability the availability to set
+     */
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 }

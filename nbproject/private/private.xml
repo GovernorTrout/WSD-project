@@ -12,6 +12,8 @@
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/register.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/registerAction.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Booking.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/rest/BookingService.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/viewBookings.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Bookings.xsd</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Tutor.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Students.java</file>
@@ -21,6 +23,7 @@
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/students.xml</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/TutorApplication.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/main.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Students.xsd</file>
         </group>
     </open-files>
