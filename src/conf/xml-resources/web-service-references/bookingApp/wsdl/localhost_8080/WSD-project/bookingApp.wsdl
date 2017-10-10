@@ -40,6 +40,12 @@
 <message name="getBookingsListResponse">
 <part name="parameters" element="tns:getBookingsListResponse"/>
 </message>
+<message name="updateStudents">
+<part name="parameters" element="tns:updateStudents"/>
+</message>
+<message name="updateStudentsResponse">
+<part name="parameters" element="tns:updateStudentsResponse"/>
+</message>
 <message name="getStudents">
 <part name="parameters" element="tns:getStudents"/>
 </message>
@@ -69,6 +75,12 @@
 </message>
 <message name="getTutorsListResponse">
 <part name="parameters" element="tns:getTutorsListResponse"/>
+</message>
+<message name="createBooking">
+<part name="parameters" element="tns:createBooking"/>
+</message>
+<message name="createBookingResponse">
+<part name="parameters" element="tns:createBookingResponse"/>
 </message>
 <message name="getStudentApp">
 <part name="parameters" element="tns:getStudentApp"/>
@@ -129,6 +141,11 @@
 <fault message="tns:IOException" name="IOException" wsam:Action="http://soap.wsd.uts/BookingsSoap/getBookingsList/Fault/IOException"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.uts/BookingsSoap/getBookingsList/Fault/Exception"/>
 </operation>
+<operation name="updateStudents">
+<input wsam:Action="http://soap.wsd.uts/BookingsSoap/updateStudentsRequest" message="tns:updateStudents"/>
+<output wsam:Action="http://soap.wsd.uts/BookingsSoap/updateStudentsResponse" message="tns:updateStudentsResponse"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.uts/BookingsSoap/updateStudents/Fault/Exception"/>
+</operation>
 <operation name="getStudents">
 <input wsam:Action="http://soap.wsd.uts/BookingsSoap/getStudentsRequest" message="tns:getStudents"/>
 <output wsam:Action="http://soap.wsd.uts/BookingsSoap/getStudentsResponse" message="tns:getStudentsResponse"/>
@@ -156,6 +173,10 @@
 <output wsam:Action="http://soap.wsd.uts/BookingsSoap/getTutorsListResponse" message="tns:getTutorsListResponse"/>
 <fault message="tns:IOException" name="IOException" wsam:Action="http://soap.wsd.uts/BookingsSoap/getTutorsList/Fault/IOException"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://soap.wsd.uts/BookingsSoap/getTutorsList/Fault/Exception"/>
+</operation>
+<operation name="createBooking">
+<input wsam:Action="http://soap.wsd.uts/BookingsSoap/createBookingRequest" message="tns:createBooking"/>
+<output wsam:Action="http://soap.wsd.uts/BookingsSoap/createBookingResponse" message="tns:createBookingResponse"/>
 </operation>
 <operation name="getStudentApp">
 <input wsam:Action="http://soap.wsd.uts/BookingsSoap/getStudentAppRequest" message="tns:getStudentApp"/>
@@ -250,6 +271,18 @@
 <soap:fault name="Exception" use="literal"/>
 </fault>
 </operation>
+<operation name="updateStudents">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
 <operation name="getStudents">
 <soap:operation soapAction=""/>
 <input>
@@ -318,6 +351,15 @@
 <fault name="Exception">
 <soap:fault name="Exception" use="literal"/>
 </fault>
+</operation>
+<operation name="createBooking">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 <operation name="getStudentApp">
 <soap:operation soapAction=""/>

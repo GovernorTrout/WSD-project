@@ -106,7 +106,6 @@ public class BookingsSoap {
     public Students getStudents() throws IOException, Exception {
         return getStudentApp().getStudents();  
     }
-    @WebMethod
     public Tutors getTutors() throws IOException, Exception {
         return getTutorApp().getTutors();  
     }
@@ -132,6 +131,22 @@ public class BookingsSoap {
         FileOutputStream fout = new FileOutputStream(filePath);
         m.marshal(tutors, fout);
         fout.close();
+    }
+    @WebMethod
+    public void updateStudents(Students students, String filePath) throws Exception {
+        this.students = students;
+        this.filePath = filePath;
+        JAXBContext jc = JAXBContext.newInstance(Students.class);
+        Marshaller m = jc.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        FileOutputStream fout = new FileOutputStream(filePath);
+        m.marshal(students, fout);
+        fout.close();
+    }
+    @WebMethod
+    public Booking createBooking(@WebParam(name="id") int id, String studentEmail, String studentName, String tutorEmail, String tutorName, String subject, String status){
+        Booking b = new Booking(id, studentEmail, studentName, tutorEmail, tutorName, subject, status);
+        return b;
     }
     @WebMethod
     public void updateBookings(@WebParam(name="bookings")Bookings bookings, @WebParam(name="filepath")String filePath) throws Exception {

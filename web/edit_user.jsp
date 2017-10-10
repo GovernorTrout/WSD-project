@@ -118,6 +118,7 @@
                     }
                 }
                 if (tutor!= null) {
+                    if(cancel==null) {
                         String subject = request.getParameter("subject");
                         Tutor t= tutors.getTutor(tutor.getEmail());
                         if (tutors!=null && tutor!=null && dob!=null && email!=null && password!=null && name!=null) {
@@ -136,6 +137,18 @@
                             tutorApp.updateTutors(tutors, filePathTutor);
                             %><p id ="p2">Account updated</p><%
                         }
+                    } else if (cancel.equals("on")) {
+                        %><p id ="p2">Account Cancelled, you have been logged out.</p><%
+                        for (Booking b : bookings.getList()) {
+                            if (tutor.getName().equals(b.getTutorName()) && tutor.getEmail().equals(b.getTutorEmail())) {
+                                b.setStatus("Cancelled");
+                            }
+                        }
+                        tutors.removeTutor(tutors.getTutor(tutor.getEmail()));
+                        bookingApp.updateBookings(bookings, filePathBooking);
+                        tutorApp.saveTutors();
+                        session.invalidate();
+                    }
                 }
             }%>
     </body>
