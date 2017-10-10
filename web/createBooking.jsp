@@ -52,7 +52,7 @@
                 
                 <tr><td>Tutor email:</td><td><input type ="text" name ="tutorEmail" value="${param.email}"></td></tr>
                 <tr><td>Subject</td><td><input type ="text" name ="subject" value ="${param.subject}"></td></tr>
-                <tr><td><input type ="submit"></td>
+                <tr><td><input type ="submit"></td></tr>
                     
             </table>
                 </div>

@@ -6,8 +6,8 @@ and open the template in the editor.
 -->
 <xs:schema
  xmlns:xs="http://www.w3.org/2001/XMLSchema"
- targetNamespace="https://www.w3schools.com"
- xmlns="https://www.w3schools.com"
+ targetNamespace="http://www.uts.edu.au/31284/wsd-tutor"
+ xmlns="http://www.uts.edu.au/31284/wsd-tutor Students.xsd"
  elementFormDefault="qualified">
  
 <xs:simpleType name="name">

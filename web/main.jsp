@@ -63,7 +63,7 @@
                                     </select>
                         </td></tr>
                     <tr><td>Tutor name: <input type="name" name="tutorname"></td></tr>
-                    <tr><td>Tutor status: <input type="checkbox" name="tutoravail" value="Available">Available</td><td><input type="checkbox" name="tutoravail" value ="Unavailable">Unavailable</td</tr>
+                    <tr><td>Tutor status: <input type="checkbox" name="tutoravail" value="Available">Available</td><td><input type="checkbox" name="tutoravail" value ="Unavailable">Unavailable</td></tr>
                     <tr><td><input type="submit" value="Search"</td></tr>
                 </table>
                     <input type ="hidden" name="submitted" value ="yes">
