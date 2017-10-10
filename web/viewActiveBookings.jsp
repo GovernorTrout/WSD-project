@@ -47,6 +47,7 @@
         <table class ="results">
             <tr class ="results2"><td>ID</td><td>Student Name</td><td>Student Email</td><td>Tutor Name</td><td>Tutor Email</td><td>Subject</td></tr>
         <%
+            //For each booking, if the type is active then add a row to our table with details.
             for (Booking b : bookings.getList()) {
                     if (b.getStatus().equals("Active")) {%>
                         <tr><td><%=b.getId()%></td><td><%=b.getStudentName()%></td><td><%=b.getStudentEmail()%></td><td><%=b.getTutorName()%></td><td><%=b.getTutorEmail()%></td><td><%=b.getSubject()%></td></tr>

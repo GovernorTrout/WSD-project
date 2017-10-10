@@ -58,7 +58,7 @@
                 </table>    
                 <input type="hidden" name="created" value ="yes">
             </form>
-        <% }if (tutor!=null) { %>
+        <% }else if (tutor!=null) { %>
         <form method="post" action="edit_user.jsp">
             <table class ="register">
                 <tr><td>Email</td> <td><input type="text" name="email" value="<%=tutor.getEmail()%>"></td></tr>
@@ -71,6 +71,7 @@
                             <option value="SEP">SEP</option>
                             <option value="AppProg">AppProg</option>
                             <option value="MobileApp">MobileApp</option></select></td></tr>
+                <tr><td>Cancel my account</td><td><input type="checkbox" name="cancel"></td></tr>
                 <tr><td></td><td><input type="submit" value="Save"</td></tr>
                 <p id ="p2">Return to the main page <a href="index.jsp">Main page</a></p>        
             </table>       
@@ -90,6 +91,7 @@
                 if (student!= null) {
                     if (cancel==null) {
                         Student s = students.getStudent(student.getEmail());
+                        //Null checking otherwise java will throw null ptr exception
                         if (students!=null && student!=null && dob!=null && email!=null && password!=null && name!=null) {
                             //update our object
                             s.setDob(dob);
@@ -104,6 +106,7 @@
                             studentApp.updateStudents(students, filePathStudent);
                             %><p id ="p2">Account updated</p><%
                         }
+                        //If our checkbox is on, then proceed to cancel the account. Iterate through all bookings attached to the account then set their statuses to Cancelled
                     } else if (cancel.equals("on")) {
                         %><p id ="p2">Account Cancelled, you have been logged out.</p><%
                         for (Booking b : bookings.getList()) {
@@ -111,6 +114,7 @@
                                 b.setStatus("Cancelled");
                             }
                         }
+                        //Remove the object from our unmarshalled list, then marshal the object back to XML and kill the session.
                         students.removeStudent(students.getStudent(student.getEmail()));
                         bookingApp.updateBookings(bookings, filePathBooking);
                         studentApp.saveStudents();

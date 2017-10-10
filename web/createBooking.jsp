@@ -71,10 +71,12 @@
             String tutorName = tutors.getTutor(tutorEmail).getName();
             String avail = tutors.getTutor(tutorEmail).getAvailability();
             String subject = request.getParameter("subject");
+            //First check if the tutor is available
             if (avail!=null && avail.equals("Unavailable")) {
                 %><p id ="p2">Tutor is currently unavailable, please select another tutor</p><%
             } else if (avail!=null){
                 String status = "Active";
+                //if not, then make a new booking, add it to the unmarshalled object list, then make tutor Unavailable then marshal both back to XML
                 Booking booking = new Booking(id, studentEmail, studentName, tutorEmail, tutorName, subject, status);
                 bookings.addBooking(booking);
                 tutors.getTutor(tutorEmail).setAvailability("Unavailable");

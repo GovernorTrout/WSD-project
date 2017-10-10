@@ -54,6 +54,7 @@
         </form>
         <% if (submitted != null && submitted.equals("yes")) {
             int id = Integer.parseInt(request.getParameter("id"));
+            //If the booking ID matches a booking inside the bookings unmarshalled object, and if we're logged in, and our name/email matches listed name/email then we own it and can view it
             if (id == bookings.getBooking(id).getId()) {
                 if (student != null) {
                     if (student.getName().equals(bookings.getBooking(id).getStudentName()) && student.getEmail().equals(bookings.getBooking(id).getStudentEmail())) {

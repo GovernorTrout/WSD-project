@@ -11,23 +11,25 @@
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/login.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Tutors.xsd</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/cancelBooking.jsp</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/viewBookingsXLST.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/register.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/rest/BookingService.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/viewActiveBookings.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/Bookings.xsd</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/viewBooking.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/students.xsl</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/edit_user.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/TutorApplication.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/students.xml</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/createBooking.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/completeBooking.jsp</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Student.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/main.css</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/soap/BookingsSoap.java</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Booking.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Students.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/BookingApplication.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/src/java/uts/wsd/Bookings.java</file>
             <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/bookings.xml</file>
-            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/main.jsp</file>
+            <file>file:/C:/Users/sawicky/Documents/uni/Web%20Services/WSD-project/web/WEB-INF/tutors.xsl</file>
         </group>
     </open-files>
 </project-private>

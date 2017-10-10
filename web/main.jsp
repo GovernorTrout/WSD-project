@@ -45,6 +45,10 @@
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="register.jsp">Register</a></li>
         <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <% if (student!=null || tutor!=null) { %>
+	<li class ="navigation"><a href="booking.jsp">Booking Menu</a></li>
+        <li class ="navigation"><a href="edit_user.jsp">Account</a></li>       
+        <% } %>
         <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <% if (session.getAttribute("student") != null) { 

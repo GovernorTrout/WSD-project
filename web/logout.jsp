@@ -17,7 +17,7 @@
         
         <%
             session.invalidate();
+            response.sendRedirect("index.jsp");
         %>
-        <p id ="p2">You have been logged out, Click <a href="index.jsp">here</a> to return to the landing page.</p>
     </body>
 </html>

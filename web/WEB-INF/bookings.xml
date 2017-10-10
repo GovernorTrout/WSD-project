@@ -5,10 +5,10 @@
           xsi:schemaLocation="http://www.uts.edu.au/31284/wsdtutor Bookings.xsd">
     <booking>    
         <id>0</id>    
-        <studentEmail>testemail@gmail.com</studentEmail>
-        <studentName>Test Name</studentName>
-        <tutorEmail>testemail@gmail.com</tutorEmail>
-        <tutorName>Test Name</tutorName>
+        <studentEmail>student@tutoring.com</studentEmail>
+        <studentName>Test Student</studentName>
+        <tutorEmail>tutor@tutoring.com</tutorEmail>
+        <tutorName>Test Tutor</tutorName>
         <subject>WSD</subject>
         <status>Active</status>
     </booking>

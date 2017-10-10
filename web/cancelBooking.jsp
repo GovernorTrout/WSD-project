@@ -44,6 +44,8 @@
         <ul class ="navigationbar">
 	<li class ="navigation"><a class ="active" href="cancelBooking.jsp">Cancel a booking</a></li>
 	<li class ="navigation"><a href="booking.jsp">Booking Menu</a></li>
+        <li class ="navigation"><a href="main.jsp">Main Menu</a></li>
+        <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <p id ="p2">Please enter your booking ID to cancel</p>
         <form method ="post" action ="cancelBooking.jsp">
@@ -54,6 +56,7 @@
             <input type="hidden" name ="submitted" value ="yes">
         </form>
         <% if (submitted != null && submitted.equals("yes")) {
+            //Iterate through all bookings till a match is found cross checking your name and email with listed name, email. If matched, set the status to Cancelled and make the attached tutor Available, then marshal both back to xml.
             int id = Integer.parseInt(request.getParameter("id"));
             if (bookings.getBooking(id) != null) {
                 if (id == bookings.getBooking(id).getId()) {

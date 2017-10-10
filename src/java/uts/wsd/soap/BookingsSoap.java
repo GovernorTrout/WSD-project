@@ -20,10 +20,7 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.handler.MessageContext;
 import uts.wsd.*;
 
-/**
- *
- * @author George
- */
+
 @WebService(serviceName = "bookingApp")
 public class BookingsSoap {
     private Tutors tutors;
@@ -36,14 +33,7 @@ public class BookingsSoap {
    
     private BookingApplication getBookingApp() throws JAXBException, IOException, Exception {
          ServletContext application = (ServletContext)context.getMessageContext().get(MessageContext.SERVLET_CONTEXT);
-        // The web server can handle requests from different clients in parallel.
-        // These are called "threads".
-        //
-        // We do NOT want other threads to manipulate the application object at the same
-        // time that we are manipulating it, otherwise bad things could happen.
-        //
-        // The "synchronized" keyword is used to lock the application object while
-        // we're manpulating it.
+
         synchronized (application) {
             BookingApplication bookingApp = (BookingApplication) application.getAttribute("bookingApp");
             if (bookingApp == null) {

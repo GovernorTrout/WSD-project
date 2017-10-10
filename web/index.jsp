@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="uts.wsd.*"  import="java.util.*"contentType="text/html" pageEncoding="UTF-8"%>
+<%//silent redirect to main.jsp%>
 <jsp:forward page ="main.jsp"></jsp:forward>
 <!DOCTYPE html>
 <html>

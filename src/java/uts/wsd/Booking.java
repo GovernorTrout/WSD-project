@@ -7,9 +7,8 @@ import javax.xml.bind.annotation.*;
  * @author sawicky
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(namespace="")
 public class Booking implements Serializable {
-    @XmlAttribute(name="id")
+    @XmlElement(name="id")
     private int id;
     @XmlElement(name="studentEmail")
     private String studentEmail;

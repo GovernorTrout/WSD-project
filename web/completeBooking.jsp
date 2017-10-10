@@ -35,6 +35,7 @@
         <li class ="navigation"><a href="logout.jsp">Logout</a></li>
         </ul>
         <%
+            //Find the parameter using HTTP GET, then if that booking isnt already completed or cancelled, change the status to Completed and make the attached tutor Available again.
             int id = Integer.parseInt(request.getParameter("id"));
             if (bookings.getBooking(id).getStatus().equals("Completed") || bookings.getBooking(id).getStatus().equals("Cancelled")) {
                 %><p id ="p2"><font color ="red">Booking is either completed or cancelled</font></p><%
@@ -45,6 +46,7 @@
                 bookingApp.updateBookings(bookings, filePathBooking);%>
                 <p id ="p2">Booking <%=id%> completed</p>
             <% } %>
+            <p id="p2"><a href="viewMyBookings.jsp"> Go Back </a></p> 
         
             
         

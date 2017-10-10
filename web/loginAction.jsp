@@ -40,11 +40,12 @@
             String password = request.getParameter("password");
             Student student = students.login(email, password);
             Tutor tutor = tutors.login(email, password);
+            //Login by a student and a tutor. One of them will not be null, and that is our user.
             if (student != null) {
                 session.setAttribute("student", student); %>
         <script LANGUAGE="JavaScript">
-                         // redirect to main after 5 seconds
-                    var time = 5; 
+                         // redirect to main after 4 seconds
+                    var time = 3; 
                     var timelong = 0;
                          //reduce time
                     function diplaytime() {
@@ -82,6 +83,7 @@
                 boolean emailFlag = false;
                 boolean passwordFlag = false;
                 %><p id ="p2"><font color ="red">Invalid login details! Please try again</font></p><%
+                    //Inline server validation. Check to see which one of our login details were incorrect. If email wasnt found, then set the email flag to true. If an email was found, but the password was wrong, then set the password flag to true.
                     for (Tutor t : tutors.getList()) {
                         if (email!= null && !email.equals(t.getEmail())) {
                          emailFlag = true;
@@ -89,6 +91,7 @@
                          passwordFlag = true;   
                         }
                     }
+                    //Do the checking for all tutors and all students, as we don't know who the user is trying to login as.
                 for (Student s : students.getList()) {
                         if (email!= null && !email.equals(s.getEmail())) {
                          emailFlag = true;
@@ -96,6 +99,7 @@
                          passwordFlag = true;   
                         }
                 }
+                //Display a message depending on which error we got.
                 if (emailFlag == true && passwordFlag == false) {
                     %><p id ="p2"><font color ="red">Email not found</font></p><%
                  } else if (passwordFlag == true) {

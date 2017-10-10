@@ -17,6 +17,7 @@
         <h1 id="h" >Register</h1>
         <form method="post" action="registerAction.jsp">
                  <script type="text/javascript">
+                     //Function to hide and delete the subject option if we are not a tutor.
                 function tutorFunc($i){
                     if ($i == "Tutor") {;
                         document.getElementById("specialityTD").innerHTML = "Specialty Subject";

@@ -49,6 +49,7 @@
             int count = 0;
             for (Booking b : bookings.getList())
             {
+                //For all bookings, if our details match the booking details then increment our counter (just to check if we own any) then list the details of it
                 if (student != null) {
                     if (student.getName().equals(b.getStudentName()) && student.getEmail().equals(b.getStudentEmail())) {
                         count++;

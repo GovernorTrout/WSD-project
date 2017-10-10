@@ -48,6 +48,7 @@
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             String dob = request.getParameter("dob");
+            //Methods to see which one of our fields were empty. Can be multiple errors.
              if (dob.isEmpty()) {
                 %><p id ="p2"><font color="red">You cannot leave your date of birth empty!</font></p><%
             }
@@ -64,6 +65,7 @@
                 %><p id ="p2">Invalid registration, please try again <a href="register.jsp">here</a></p><%
             }
             else if (students.getStudent(email) == null && tutors.getTutor(email) == null && !dob.isEmpty() && !password.isEmpty() && !name.isEmpty() && !email.isEmpty()) {
+                //If we picked the student type, then create a student object, add it to the unmarshalled list of students we got from top of page then marshal it back to XML.
                 if (type.equals("Student") && type!=null) {
                     Student student = new Student(name, email, password, type, dob);             
                     session.setAttribute("student", student);
@@ -104,7 +106,8 @@
                     timer = setInterval('diplaytime()', 1000);
                     timer = setTimeout('redirect()', time * 1000);
                 </script>
-                <p id="p2">Thank you for registering!<br>You will be taken to the main page momentarily..</p>
+                <p id="p2">Thank you for registering!<br>You will be taken to the main page momentarily..</p>\
+                <% //If the email we type already exists (the email will be our Primary Key) then user already exists %>
             <% } else if (students.getStudent(email) != null || tutors.getTutor(email) != null){ %>
             <p id ="p2"> User already exists, please try again <a href="register.jsp">here</a></p>
             <% } %>
