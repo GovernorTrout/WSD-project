@@ -54,23 +54,19 @@
                 </style>
             </head>
             <body>
-                <p id ="p2">Bookings List:</p>
+                <p id ="p2">Students List</p>
                 <xsl:apply-templates />                
             </body>
         </html>
     </xsl:template>
    
-    <xsl:template match="x:bookings">
+    <xsl:template match="x:students">
         <table class ="results">
             <thead>
                 <tr class ="results2">
-                    <th>ID</th>
-                    <th>Student Email</th>
                     <th>Student Name</th>
-                    <th>Tutor Email</th>
-                    <th>Tutor Name</th>
-                    <th>Subject</th>
-                    <th>Status</th>
+                    <th>Student Email</th>
+                    <th>DOB</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,28 +74,17 @@
             </tbody>
         </table>
     </xsl:template>
-    <xsl:template match="x:booking">
+    <xsl:template match="x:student">
         <tr class ="results2">
+
             <td>
-                <xsl:value-of select="x:id" />
-            </td>
-            <td>
-                <xsl:value-of select="x:studentEmail" />
-            </td>  
-            <td>
-                <xsl:value-of select="x:studentName" />
-            </td>  
-            <td>
-                <xsl:value-of select="x:tutorEmail" />
+                <xsl:value-of select="x:name" />
             </td> 
             <td>
-                <xsl:value-of select="x:tutorName" />
+                <xsl:value-of select="x:email" />
             </td> 
             <td>
-                <xsl:value-of select="x:subject" />
-            </td> 
-            <td>
-                <xsl:value-of select="x:status" />
+                <xsl:value-of select="x:dob" />
             </td>             
         </tr>
     </xsl:template>

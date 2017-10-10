@@ -21,7 +21,7 @@ import uts.wsd.*;
 public class BookingClient {
  
      public static void main(String[] args) throws Exception_Exception, IOException_Exception, JAXBException, JAXBException_Exception{
-         
+        //Init the collections we will be using
         Student student = null;
         Tutor tutor = null;
         Students students = null;
@@ -41,6 +41,7 @@ public class BookingClient {
             student = bapp.sLogin(email, pass);
             tutor = bapp.tLogin(email, pass);
         }
+        //We can check whether our user is a tutor or student by checking the object, we ran both logins with the same user,pass but only one of them returned not null
         if (tutor!=null || student!=null) {
             if (student!=null) {
                 System.out.println("Welcome Student "+student.getName());
@@ -55,16 +56,20 @@ public class BookingClient {
             System.out.println("3. Cancel a booking");
             System.out.println("4. Cancel account");
             System.out.println("5. Edit account");
+            //Additional option for a tutor
             if (tutor!=null) {
                 System.out.println("6. Complete a booking");
             }
             System.out.println("0. Exit application");
+            //Init our bookings
             Bookings bookings = bapp.displayBookings();
             int input = -1;
+            //0 will be our sentinel to end program.
             while (input!=0) {
                 input = in.nextInt();
                 switch(input) {
                     case 1:
+                        //For each booking, list it's details.
                         for (Booking b : bookings.getBooking()) {
                             System.out.println("################## Booking ID: "+b.getId()+ " ##################");
                             System.out.println("Student Email: "+b.getStudentEmail()+"\nStudent Name: "+b.getStudentName()+"\nTutor Email: "+b.getTutorEmail()+"\nTutor Name: "+b.getTutorName()+"\nStatus: "+b.getStatus());
@@ -73,28 +78,36 @@ public class BookingClient {
                         menu(tutor);
                         break;
                     case 2:
+                        //Different methods for tutor, student
                         if (tutor!=null) {
                             System.out.println("Enter a student name to book");
                             String name = in.next();
+                            //Check your input string for a match against all students
                             for (Student s : bapp.getStudents().getStudent()) {
+                                //If there is a match, and you(tutor) are available, create the booking.
                                 if (name.equals(s.getName())) {
                                     System.out.println("Found student with the name: "+name);
                                     System.out.println("Students email: "+s.getEmail());
                                     if (tutor.getAvailability().equals("Available")) {
+                                        //Get a unique ID of the booking by interating through all bookings again and incrementing the ID.
                                         int id = 0;
                                         for (Booking bs : bookings.getBooking()) {
                                             if (id == bs.getId()) {
                                                 id++;
                                             }
                                         }
+                                        //Use our createbooking method from our Booking Soap service, then add it to the list of bookings that we also take from the soap service.
                                         Booking newBooking = bapp.createBooking(id, s.getEmail(), s.getName(), tutor.getEmail(), tutor.getName(), tutor.getSubject(), "Active");
                                         Bookings b = bapp.displayBookings();
                                         b.getBooking().add(newBooking);
+                                        //Hack method: Could not retrieve a specific tutor from the list of tutors via Soap service, so instead, iterated through all tutors until a match was 
+                                        //found with your current details, then set the availability.
                                         for (Tutor t : tapp.getTutors().getTutor()) {
                                             if (tutor.getEmail().equals(t.getEmail()) && tutor.getPassword().equals(t.getPassword())) {
                                                 t.setAvailability("Unavailable");  
                                             }
                                         }
+                                        //Use the update methods from Soap that marshal objects back to xml.
                                         bapp.updateTutors(tapp.getTutors(), tapp.getFilePath());
                                         bapp.updateBookings(b, bapp.getFilePath());
                                         System.out.println("Booking created! Details: ");
@@ -117,6 +130,7 @@ public class BookingClient {
                                 if (name.equals(t.getName())) {
                                     System.out.println("Found tutor with the name: "+name);
                                     System.out.println("Tutors email: "+t.getEmail());
+                                    //Same method as the tutor, but instead checks your target tutors availability and fails if unavailable.
                                     if (tutor.getAvailability().equals("Available")) {
                                         int id = 0;
                                         for (Booking bs : bookings.getBooking()) {
@@ -143,6 +157,7 @@ public class BookingClient {
                         
                         int cancel = in.nextInt();
                         Bookings sb = bapp.displayBookings();
+                        //For each booking, if there is an ID that matches your input ID, and you own it (via crosschecking your name, email) then set the attached tutors avail to Available and set the booking to Cancelled
                         for (Booking b : sb.getBooking()) {
                             if (cancel==b.getId()) {
                                 if (student!=null) {
@@ -196,12 +211,14 @@ public class BookingClient {
                         Students bs = bapp.getStudents();
                         Tutors bt = bapp.getTutors();
                         Bookings bookingSearch = bapp.displayBookings();
+                        //First, iterate through all bookings that are assigned to you and set them to cancelled.
                         if (student!=null) {
                             for (Booking b : bookingSearch.getBooking()) {
                                 if (student.getName().equals(b.getStudentName()) && student.getEmail().equals(b.getStudentEmail())) {
                                     b.setStatus("Cancelled");
                                 }
                             }
+                            //Next, iterate through the list of objects, find yours then remove it from the array we took from our Booking Soap service.
                              for (Student s : bs.getStudent()) {
                                     if (student.getEmail().equals(s.getEmail()) && student.getPassword().equals(s.getPassword())) {
                                         bs.getStudent().remove(s); 
@@ -209,6 +226,7 @@ public class BookingClient {
                                     }
                                     
                                 }
+                             //Marsha the bookings and objects xml.
                             bapp.updateStudents((bs), sapp.getFilePath());
                             bapp.updateBookings((bookingSearch), bapp.getFilePath()); 
                         }
@@ -232,6 +250,7 @@ public class BookingClient {
                         System.exit(0);
                         break;
                     case 5:
+                        //Extra option 5 for tutors.
                         Tutors editTutors = bapp.getTutors();
                         Students editStudents = bapp.getStudents();
                         System.out.println("What do you want to edit?");
@@ -247,6 +266,7 @@ public class BookingClient {
                         Scanner inEdit = new Scanner (System.in);
                         switch (choice) { 
                             case 1:
+                                //Simple method. Iterate through list of objects until there is match with your current login, then call the mutator of your object for each attribute.
                                 System.out.print("Edit your name :");
                                 String name = inEdit.nextLine();
                                 if (tutor!=null) {
@@ -359,6 +379,7 @@ public class BookingClient {
 
                         break;
                     case 6:
+                        //Students cannot complete bookings, so show the same message as default then return to menu.
                         Bookings completeSearch = bapp.displayBookings();
                         if (student!=null) {
                             System.out.println("Invalid option, please select again");
@@ -366,6 +387,7 @@ public class BookingClient {
                         } else if (tutor!=null) {
                             System.out.println("Which booking would you like to complete");
                             int book = in.nextInt();
+                            //Iterate through bookings until there is a match with ID, then set the status to Completed then marshal it back to xml.
                             for (Booking b : completeSearch.getBooking()) {
                                 if (book==b.getId()) {
                                     b.setStatus("Completed");

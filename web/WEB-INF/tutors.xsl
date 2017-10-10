@@ -54,23 +54,20 @@
                 </style>
             </head>
             <body>
-                <p id ="p2">Bookings List:</p>
+                <p id ="p2">Tutors List</p>
                 <xsl:apply-templates />                
             </body>
         </html>
     </xsl:template>
    
-    <xsl:template match="x:bookings">
+    <xsl:template match="x:tutors">
         <table class ="results">
             <thead>
                 <tr class ="results2">
-                    <th>ID</th>
-                    <th>Student Email</th>
-                    <th>Student Name</th>
-                    <th>Tutor Email</th>
-                    <th>Tutor Name</th>
+                    <th>Tutor name</th>
+                    <th>Tutor email</th>
                     <th>Subject</th>
-                    <th>Status</th>
+                    <th>Availability</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,29 +75,21 @@
             </tbody>
         </table>
     </xsl:template>
-    <xsl:template match="x:booking">
+    <xsl:template match="x:tutor">
         <tr class ="results2">
+
             <td>
-                <xsl:value-of select="x:id" />
-            </td>
-            <td>
-                <xsl:value-of select="x:studentEmail" />
-            </td>  
-            <td>
-                <xsl:value-of select="x:studentName" />
-            </td>  
-            <td>
-                <xsl:value-of select="x:tutorEmail" />
+                <xsl:value-of select="x:name" />
             </td> 
             <td>
-                <xsl:value-of select="x:tutorName" />
+                <xsl:value-of select="x:email" />
             </td> 
             <td>
                 <xsl:value-of select="x:subject" />
-            </td> 
+            </td>  
             <td>
-                <xsl:value-of select="x:status" />
-            </td>             
+                <xsl:value-of select="x:availability" />
+            </td>           
         </tr>
     </xsl:template>
 </xsl:stylesheet>

@@ -3,12 +3,13 @@
 <bookings xmlns="http://www.uts.edu.au/31284/wsdtutor"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.uts.edu.au/31284/wsdtutor Bookings.xsd">
-    <booking id ="0">        
+    <booking>    
+        <id>0</id>    
         <studentEmail>testemail@gmail.com</studentEmail>
         <studentName>Test Name</studentName>
         <tutorEmail>testemail@gmail.com</tutorEmail>
         <tutorName>Test Name</tutorName>
         <subject>WSD</subject>
-        <status>Test Status</status>
+        <status>Active</status>
     </booking>
 </bookings>

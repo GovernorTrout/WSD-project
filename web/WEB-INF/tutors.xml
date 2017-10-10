@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="tutors.xsl"?>
 <tutors xmlns="http://www.uts.edu.au/31284/wsdtutor"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.uts.edu.au/31284/wsdtutor Tutors.xsd">>
-    <tutor>        
-        <name>test</name>
-        <email>testemail</email>
+         xsi:schemaLocation="http://www.uts.edu.au/31284/wsdtutor Tutors.xsd">
+    <tutor>
+        <name>Test Tutor</name>
+        <email>tutor@tutoring.com</email>
         <password>testpassword</password>
         <type>Tutor</type>
-        <dob>testdob></dob>
-        <subject>testsubject</subject>    
-        <availability>testavail</availability>
+        <dob>11-02-1984</dob>
+        <subject>SEP</subject>    
+        <availability>Available</availability>
     </tutor>
 </tutors>
