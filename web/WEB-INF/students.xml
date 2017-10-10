@@ -2,7 +2,7 @@
 <students>
     <student>        
         <name>test</name>
-        <email>testemail</email>
+        <email>testemailstudent</email>
         <password>testpassword</password>
         <type>Student</type>
         <dob>testdob></dob>

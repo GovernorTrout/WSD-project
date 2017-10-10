@@ -24,7 +24,8 @@ public class Booking implements Serializable {
     @XmlElement(name="status")
     private String status;
     
-    public Booking() {
+    public Booking()
+    {
         super();
     }
     public Booking(int id, String studentEmail, String studentName, String tutorEmail, String tutorName, String subject, String status) {

@@ -62,5 +62,18 @@ public class BookingService {
     public Booking getBooking(@QueryParam("id") int ID) throws JAXBException, IOException, Exception{
         return getBookingApp().getBookings().getBooking(ID);
     }
-}
+    @Path("bookings//{studentname}")
+    @GET
+    @Produces(MediaType.TEXT_XML)
+    public Bookings getBooking(@QueryParam("studentname") String name) throws JAXBException, IOException, Exception{
+        Bookings temp = null;
+        for (Booking b : getBookingApp().getBookings().getList()) {
+            if (name.equals(b.getStudentName())) {
+                temp.addBooking(b);    
+            }
+        }
+        return temp;
+            
+        }
+    }
 

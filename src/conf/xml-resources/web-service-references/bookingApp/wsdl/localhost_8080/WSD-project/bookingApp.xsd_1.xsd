@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://soap.wsd.uts/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://soap.wsd.uts/">
+
+<xs:import schemaLocation="http://localhost:8080/WSD-project/bookingApp?xsd=2"/>
+
+<xs:element name="Exception" type="tns:Exception"/>
+
+<xs:element name="IOException" type="tns:IOException"/>
+
+<xs:element name="JAXBException" type="tns:JAXBException"/>
+
+<xs:element name="bookings" type="tns:bookings"/>
+
+<xs:element name="displayBookings" type="tns:displayBookings"/>
+
+<xs:element name="displayBookingsResponse" type="tns:displayBookingsResponse"/>
+
+<xs:element name="getBookingsList" type="tns:getBookingsList"/>
+
+<xs:element name="getBookingsListResponse" type="tns:getBookingsListResponse"/>
+
+<xs:element name="getFilePath" type="tns:getFilePath"/>
+
+<xs:element name="getFilePathResponse" type="tns:getFilePathResponse"/>
+
+<xs:element name="getStudentApp" type="tns:getStudentApp"/>
+
+<xs:element name="getStudentAppResponse" type="tns:getStudentAppResponse"/>
+
+<xs:element name="getStudents" type="tns:getStudents"/>
+
+<xs:element name="getStudentsResponse" type="tns:getStudentsResponse"/>
+
+<xs:element name="getTutor" type="tns:getTutor"/>
+
+<xs:element name="getTutorApp" type="tns:getTutorApp"/>
+
+<xs:element name="getTutorAppResponse" type="tns:getTutorAppResponse"/>
+
+<xs:element name="getTutorResponse" type="tns:getTutorResponse"/>
+
+<xs:element name="getTutors" type="tns:getTutors"/>
+
+<xs:element name="getTutorsList" type="tns:getTutorsList"/>
+
+<xs:element name="getTutorsListResponse" type="tns:getTutorsListResponse"/>
+
+<xs:element name="getTutorsResponse" type="tns:getTutorsResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="logout" type="tns:logout"/>
+
+<xs:element name="logoutResponse" type="tns:logoutResponse"/>
+
+<xs:element name="sLogin" type="tns:sLogin"/>
+
+<xs:element name="sLoginResponse" type="tns:sLoginResponse"/>
+
+<xs:element name="students" type="tns:students"/>
+
+<xs:element name="tLogin" type="tns:tLogin"/>
+
+<xs:element name="tLoginResponse" type="tns:tLoginResponse"/>
+
+<xs:element name="tutors" type="tns:tutors"/>
+
+<xs:element name="updateBookings" type="tns:updateBookings"/>
+
+<xs:element name="updateBookingsResponse" type="tns:updateBookingsResponse"/>
+
+<xs:element name="updateTutors" type="tns:updateTutors"/>
+
+<xs:element name="updateTutorsResponse" type="tns:updateTutorsResponse"/>
+
+<xs:complexType name="sLogin">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sLoginResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:student" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="student">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="Exception">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFilePath">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFilePathResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IOException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTutor">
+<xs:sequence>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTutorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tutor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tutor">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="password" type="xs:string" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+<xs:element name="dob" type="xs:string" minOccurs="0"/>
+<xs:element name="subject" type="xs:string" minOccurs="0"/>
+<xs:element name="availability" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="displayBookings">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="displayBookingsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bookings" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookings">
+<xs:sequence>
+<xs:element ref="booking" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="booking">
+<xs:sequence>
+<xs:element name="studentEmail" type="xs:string" minOccurs="0"/>
+<xs:element name="studentName" type="xs:string" minOccurs="0"/>
+<xs:element name="tutorEmail" type="xs:string" minOccurs="0"/>
+<xs:element name="tutorName" type="xs:string" minOccurs="0"/>
+<xs:element name="subject" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+<xs:attribute name="id" type="xs:int" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="logout">
+<xs:sequence>
+<xs:element name="arg0" type="tns:student" minOccurs="0"/>
+<xs:element name="arg1" type="tns:tutor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logoutResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updateTutors">
+<xs:sequence>
+<xs:element name="tutors" type="tns:tutors" minOccurs="0"/>
+<xs:element name="filepath" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tutors">
+<xs:sequence>
+<xs:element name="tutor" type="tns:tutor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateTutorsResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTutorApp">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTutorAppResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tutorApplication" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tutorApplication">
+<xs:sequence>
+<xs:element name="filePath" type="xs:string" minOccurs="0"/>
+<xs:element name="tutors" type="tns:tutors" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="JAXBException">
+<xs:sequence>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+<xs:element name="linkedException" type="tns:throwable" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBookingsList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getBookingsListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:booking" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTutorsList">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTutorsListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tutor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStudents">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getStudentsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:students" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="students">
+<xs:sequence>
+<xs:element name="student" type="tns:student" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTutors">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTutorsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tutors" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBookings">
+<xs:sequence>
+<xs:element name="bookings" type="tns:bookings" minOccurs="0"/>
+<xs:element name="filepath" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateBookingsResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="tLogin">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tLoginResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:tutor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getStudentApp">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getStudentAppResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:studentApplication" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="studentApplication">
+<xs:sequence>
+<xs:element name="filePath" type="xs:string" minOccurs="0"/>
+<xs:element name="students" type="tns:students" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -28,6 +28,11 @@ public class Bookings {
     }
     public Booking getBooking(int id) {
         // For each booking in the list...
+        if (id==01) {
+            for (Booking booking : list) {
+                return booking;
+            }  
+        }
         for (Booking booking : list) {
             if (booking.getId() == id )
                 return booking; // Login correct. Return this booking.
