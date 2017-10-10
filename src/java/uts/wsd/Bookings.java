@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.*;
  * @author sawicky
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "bookings")
+@XmlRootElement(name = "bookings", namespace="http://www.uts.edu.au/31284/wsdtutor")
 public class Bookings {
 @XmlElement(name = "booking")
     private ArrayList<Booking> list = new ArrayList<Booking>();

@@ -6,8 +6,8 @@ and open the template in the editor.
 -->
 <xs:schema
  xmlns:xs="http://www.w3.org/2001/XMLSchema"
- targetNamespace="https://www.w3schools.com"
- xmlns="https://www.w3schools.com"
+ targetNamespace="http://www.uts.edu.au/31284/wsdtutor"
+ xmlns="http://www.uts.edu.au/31284/wsdtutor"
  elementFormDefault="qualified">
  
 <xs:simpleType name="name">
@@ -23,7 +23,7 @@ and open the template in the editor.
 <xs:element name = "students" >
         <xs:complexType>
             <xs:sequence>
-                <xs:element name ="student" maxOccurs ="unbounded">
+                <xs:element name ="student" maxOccurs ="unbounded">     
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name = "name" type= "name"/>

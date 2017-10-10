@@ -8,11 +8,11 @@
   <body>
       
       <!-- Replace the URL value with the location of movies.xml on your PC-->
-    <c:import url="file:///C:/Users/sawicky/Documents/uni/Web Services/WSD-project/build/web/WEB-INF/bookings.xml"
+    <c:import url="WEB-INF/bookings.xml"
               var="inputDoc" />
 
     <!-- Replace the URL value with the location of movies.xsl on your PC-->
-    <c:import url="file:///C:/Users/sawicky/Documents/uni/Web Services/WSD-project/build/web/WEB-INF/bookings.xsl"
+    <c:import url="WEB-INF/bookings.xml"
               var="stylesheet" />
 
     <!-- Transform xml inputDoc using stylesheet -->
